@@ -1,0 +1,179 @@
+/**
+ * File: multi-select.css
+ * Location: demographic-tool/frontend/css/multi-select.css
+ * Purpose:
+ *   - Updated CISOC-styled multi-select dropdowns for full-width design
+ *   - Enhances the visual appearance of filter selections
+ */
+
+/* Multi-select container styling */
+.select2-container--default .select2-selection--multiple {
+  border: 1px solid var(--cisoc-border);
+  border-radius: 6px;
+  min-height: 42px;
+  padding: 4px 8px;
+  box-shadow: none;
+  transition: all 0.2s ease;
+}
+
+.select2-container--default .select2-selection--multiple:focus-within {
+  border-color: var(--cisoc-yellow);
+  box-shadow: 0 2px 8px rgba(249, 180, 16, 0.1);
+}
+
+/* Selection choice styling */
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+  background-color: var(--cisoc-bg-light);
+  border: 1px solid var(--cisoc-border);
+  border-radius: 25px;
+  padding: 5px 12px;
+  margin: 4px 6px 4px 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Remove button styling */
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+  margin-right: 6px;
+  color: var(--cisoc-text-medium);
+  border-right: none;
+  font-weight: 700;
+  padding-right: 4px;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
+  color: var(--cisoc-text-dark);
+  background-color: transparent;
+}
+
+/* Dropdown items padding */
+.select2-results__option {
+  padding: 10px 15px;
+  transition: all 0.15s ease;
+}
+
+/* Selected items in dropdown */
+.select2-results__option[aria-selected=true] {
+  background-color: #f0f0f0;
+}
+
+.select2-results__option[aria-selected=true]:hover {
+  background-color: #e0e0e0;
+}
+
+/* Hover state for dropdown items */
+.select2-results__option--highlighted[aria-selected] {
+  background-color: var(--cisoc-yellow) !important;
+  color: white;
+}
+
+/* Search field in dropdown */
+.select2-search__field {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid var(--cisoc-border);
+  border-radius: 4px;
+}
+
+/* Filter summary styling */
+.filter-summary {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  color: var(--cisoc-text-medium);
+  line-height: 1.6;
+  padding: 15px;
+  background-color: var(--cisoc-bg-light);
+  border-radius: 6px;
+}
+
+/* Filter selection tags */
+.filter-summary span {
+  display: inline-block;
+  background: white;
+  padding: 5px 15px;
+  margin: 4px;
+  border-radius: 25px;
+  font-size: 14px;
+  border: 1px solid var(--cisoc-border);
+  font-weight: 500;
+}
+
+/* Special styling for the "All" option */
+.select2-results__option[id*="all"] {
+  font-weight: 700;
+  border-bottom: 1px dashed var(--cisoc-border);
+  margin-bottom: 8px;
+  padding-bottom: 12px;
+}
+
+/* Dropdown container */
+.select2-container--open .select2-dropdown {
+  border-color: var(--cisoc-border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Dropdown search border */
+.select2-container--default .select2-search--dropdown .select2-search__field {
+  border: 1px solid var(--cisoc-border);
+  border-radius: 4px;
+  padding: 8px;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 600px) {
+  .select2-container--default .select2-selection--multiple {
+    min-height: 48px;
+  }
+  
+  .select2-container--default .select2-selection--multiple .select2-selection__choice {
+    margin: 5px 6px 5px 0;
+    padding: 6px 14px;
+  }
+  
+  .filter-summary {
+    font-size: 14px;
+  }
+  
+  .filter-summary span {
+    display: inline-block;
+    width: calc(50% - 10px);
+    margin: 4px 5px;
+    text-align: center;
+  }
+}
+
+/* Enhance visualization of multi-select dropdowns in filter sections */
+.segment-filters .filter-group {
+  margin-bottom: 20px;
+}
+
+.segment-filters .filter-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: var(--cisoc-text-dark);
+}
+
+/* Style for the filter buttons */
+.filter-btn {
+  background-color: var(--cisoc-yellow);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  margin-top: 15px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 16px;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.filter-btn:hover {
+  background-color: #e6a50f;
+}
+
+/* All option highlight */
+select option[value="all"] {
+  font-weight: 700;
+}

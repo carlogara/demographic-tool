@@ -1,0 +1,264 @@
+/*
+  File: navigation.css
+  Location: demographic-tool/frontend/css/navigation.css
+  Purpose:
+    - Updated for full-width, sleek CISOC styling
+    - Maintains existing header and footer but enhances toggles and spacing
+*/
+
+/* ============================
+   Main Navigation - keeping most CISOC_navigation.css settings
+   ============================ */
+   .cisoc-nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .cisoc-nav-menu-item {
+    position: relative;
+    margin-left: 20px;
+  }
+  
+  .cisoc-nav-menu-item:first-child {
+    margin-left: 0;
+  }
+  
+  .cisoc-nav-menu-link {
+    display: block;
+    font-size: var(--cisoc-font-size-sm);
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 5px 0;
+    transition: all 0.3s ease;
+    color: var(--cisoc-text-dark);
+    text-decoration: none;
+  }
+  
+  /* Active and hover states - slightly thicker underline */
+  .cisoc-nav-menu-link:hover,
+  .cisoc-nav-menu-link.active {
+    color: var(--cisoc-text-dark);
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 2.5px;
+  }
+  
+  /* Menu alignment */
+  .cisoc-nav-menu-align-left {
+    justify-content: flex-start;
+  }
+  
+  .cisoc-nav-menu-align-center {
+    justify-content: center;
+  }
+  
+  .cisoc-nav-menu-align-right {
+    justify-content: flex-end;
+  }
+  
+  /* Dashboard header with navigation styling */
+  .dashboard-header {
+    background-color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+    position: sticky;
+    top: 0;
+  }
+  
+  /* Header sections */
+  .header-left {
+    display: flex;
+    align-items: center;
+    width: 25%;
+  }
+  
+  .header-center {
+    flex: 0 1 50%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .header-right {
+    display: flex;
+    align-items: center;
+    width: 25%;
+    justify-content: flex-end;
+  }
+  
+  /* Search container */
+  .header-search-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  /* View Containers - full width now */
+  .view-container {
+    margin: 0;
+    width: 100%;
+  }
+  
+  /* Region view toggle styling - more spacious and minimal */
+  .region-view-toggle {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px 0;
+    background-color: transparent;
+    border-radius: 0;
+    border-left: none;
+    border-bottom: 1px solid var(--cisoc-border);
+  }
+  
+  .region-view-toggle label {
+    font-weight: 600;
+    margin-right: 15px;
+    color: var(--cisoc-text-dark);
+  }
+  
+  .region-view-select {
+    min-width: 180px;
+    padding: 10px 15px;
+    border: 1px solid var(--cisoc-border);
+    border-radius: 6px;
+    background-color: white;
+    font-family: "Red Hat Display", Sans-serif;
+    font-size: 15px;
+  }
+  
+  /* Comparison Context Toggle styling - cleaner design */
+  .comparison-context-toggle {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    padding: 20px 0;
+    background-color: transparent;
+    border-radius: 0;
+    border-left: none;
+    border-bottom: 1px solid var(--cisoc-border);
+  }
+  
+  .comparison-context-toggle label {
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--cisoc-text-dark);
+  }
+  
+  /* Context buttons container */
+  .comparison-context-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  /* Individual context button styling */
+  .comparison-context-btn {
+    padding: 10px 20px;
+    background-color: white;
+    border: 1px solid var(--cisoc-border);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  
+  .comparison-context-btn:hover {
+    background-color: var(--cisoc-bg-light);
+  }
+  
+  .comparison-context-btn.active {
+    background-color: var(--cisoc-yellow);
+    color: white;
+    border-color: #e6a50f;
+    font-weight: 600;
+  }
+  
+  /* Style the Select2 dropdown when used with region view toggle */
+  .select2-container--default .select2-selection--single {
+    border: 1px solid var(--cisoc-border);
+    border-radius: 6px;
+    height: 42px;
+    padding: 6px 10px;
+  }
+  
+  .select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 42px;
+  }
+  
+  /* Responsive adjustments */
+  @media screen and (max-width: 1024px) {
+    .cisoc-nav-menu {
+      display: flex;
+    }
+    
+    .dashboard-header {
+      flex-wrap: wrap;
+      padding: 15px 25px;
+    }
+    
+    .header-left,
+    .header-right {
+      width: auto;
+    }
+    
+    .header-center {
+      flex: 1 1 100%;
+      order: 3;
+      margin-top: 15px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .dashboard-header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 15px 20px;
+    }
+    
+    .header-left,
+    .header-center,
+    .header-right {
+      width: 100%;
+      margin: 10px 0;
+      justify-content: flex-start;
+    }
+    
+    .cisoc-nav-menu {
+      justify-content: flex-start;
+    }
+    
+    .cisoc-nav-menu-item {
+      margin-left: 15px;
+    }
+    
+    .cisoc-nav-menu-link {
+      font-size: 14px;
+    }
+    
+    .region-view-toggle,
+    .comparison-context-toggle {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    
+    .region-view-select {
+      width: 100%;
+    }
+    
+    .comparison-context-buttons {
+      width: 100%;
+    }
+    
+    .comparison-context-btn {
+      flex: 1;
+      text-align: center;
+    }
+  }

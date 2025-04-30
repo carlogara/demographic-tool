@@ -1,0 +1,293 @@
+/*
+  File: landing.css
+  Location: demographic-tool/frontend/css/landing.css
+  Purpose:
+    - Redesigned with full-width CISOC styling
+    - Modernized landing page with fluid layout
+*/
+
+/* Landing Page Container */
+#landing-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 40px;
+  background-color: #ffffff;
+}
+
+.landing-container {
+  width: 100%;
+  max-width: 1400px; /* Slightly wider but still with some constraints for readability */
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Landing Header */
+.landing-header {
+  text-align: center;
+  margin-bottom: 60px;
+  width: 100%;
+}
+
+.landing-header h1 {
+  font-size: 42px;
+  color: var(--cisoc-text-dark);
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: var(--cisoc-text-medium);
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* CISOC Logo */
+.cisoc-logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.cisoc-logo {
+  max-width: 400px;
+  margin: 0 auto 20px;
+  display: block;
+}
+
+/* Landing Search - prominent and centered */
+.landing-search-container {
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto 80px;
+}
+
+/* Search styling - consistent between landing and header */
+.search-icon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--cisoc-text-medium);
+  font-size: 20px;
+  z-index: 1;
+}
+
+.landing-search-input {
+  width: 100%;
+  padding: 18px 20px 18px 55px;
+  font-size: 18px;
+  border: 1px solid var(--cisoc-border);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  font-family: "Red Hat Display", Sans-serif;
+  box-sizing: border-box;
+}
+
+.landing-search-input:focus {
+  outline: none;
+  border-color: var(--cisoc-yellow);
+  box-shadow: 0 4px 25px rgba(249, 180, 16, 0.15);
+}
+
+.landing-search-results {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid var(--cisoc-border);
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+/* Header search styling - smaller than landing but consistent */
+.header-search-container {
+  position: relative;
+  flex: 1;
+  max-width: 500px;
+  min-width: 200px;
+  margin: 0 20px;
+}
+
+.search-result-item {
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--cisoc-border);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.search-result-item:hover {
+  background-color: var(--cisoc-bg-light);
+}
+
+/* Feature Cards - more spaced out, elegant layout */
+.landing-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  width: 100%;
+}
+
+.feature-card {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  background-color: white;
+  border-radius: 12px;
+  padding: 40px 30px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+  width: 80px;
+  height: 80px;
+  background-color: var(--cisoc-yellow);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 25px;
+  font-size: 32px;
+}
+
+.feature-card h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: var(--cisoc-text-dark);
+  font-weight: 600;
+}
+
+.feature-card p {
+  color: var(--cisoc-text-medium);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Back Button */
+.back-button {
+  padding: 10px 16px;
+  background-color: var(--cisoc-bg-light);
+  border: 1px solid var(--cisoc-border);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  color: var(--cisoc-text-dark);
+}
+
+.back-button i {
+  margin-right: 10px;
+}
+
+.back-button:hover {
+  background-color: #e9ecef;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 900px) {
+  .landing-container {
+    padding: 0 20px;
+  }
+  
+  .landing-header h1 {
+    font-size: 36px;
+  }
+  
+  .subtitle {
+    font-size: 18px;
+  }
+  
+  .landing-search-input {
+    padding: 15px 15px 15px 50px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #landing-page {
+    padding: 40px 20px;
+  }
+  
+  .landing-header h1 {
+    font-size: 28px;
+  }
+  
+  .subtitle {
+    font-size: 16px;
+  }
+  
+  .landing-search-input {
+    padding: 12px 15px 12px 45px;
+    font-size: 16px;
+  }
+  
+  .search-icon {
+    left: 15px;
+    font-size: 18px;
+  }
+  
+  .feature-card {
+    min-width: 100%;
+    padding: 30px 20px;
+  }
+  
+  .feature-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+  
+  .cisoc-logo {
+    max-width: 300px;
+  }
+  
+  /* Improved mobile handling for dashboard header */
+  .dashboard-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .header-left {
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .header-search-container {
+    margin: 15px 0;
+    width: 100%;
+    max-width: none;
+  }
+}

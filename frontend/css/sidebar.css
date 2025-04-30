@@ -1,0 +1,74 @@
+/*
+  File: sidebar.css
+  Location: demographic-tool/frontend/css/sidebar.css
+  Purpose: Adds the CISOC sidebar with header integration
+*/
+
+/* Sidebar using the CISOC image */
+.cisoc-dots-sidebar {
+  position: fixed;
+  top: 0; /* Start at very top of page */
+  left: 0;
+  bottom: 0;
+  width: 70px; /* Slightly wider than before (was 60px) */
+  background-image: url('https://cisoc.pna.gov.pt/wp-content/uploads/2023/12/barra-lateral.png');
+  background-repeat: repeat-y;
+  background-size: 70px auto; /* Fixed size instead of contain */
+  z-index: 0; /* Lowest z-index to ensure it's behind everything */
+  height: 100vh;
+  pointer-events: none; /* Allows clicking through the sidebar */
+}
+
+/* Only show the sidebar when the dashboard is visible, not on landing page */
+#landing-page .cisoc-dots-sidebar {
+  display: none;
+}
+
+/* Make the header background transparent */
+.dashboard-header {
+  background: none !important; /* Force transparent background */
+  box-shadow: none !important; /* Remove box shadow */
+  padding-left: 85px !important; /* 70px + 15px padding */
+  position: relative;
+  z-index: 10; /* Ensure it's above sidebar */
+}
+
+/* Create a background layer for the header */
+.dashboard-header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 70px; /* Width of sidebar */
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: -1;
+}
+
+/* Adjust container margins */
+#data-dashboard .container {
+  margin-left: 70px;
+  width: calc(100% - 70px - 2%);
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+  .cisoc-dots-sidebar {
+    width: 40px;
+    background-size: 40px auto;
+  }
+  
+  .dashboard-header {
+    padding-left: 50px !important; /* 40px + 10px */
+  }
+  
+  .dashboard-header::after {
+    left: 40px;
+  }
+  
+  #data-dashboard .container {
+    margin-left: 40px;
+    width: calc(100% - 40px - 5%);
+  }
+}

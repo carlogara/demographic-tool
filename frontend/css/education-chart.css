@@ -1,0 +1,163 @@
+/**
+ * File: education-chart.css
+ * Location: demographic-tool/frontend/css/education-chart.css
+ * Purpose: CISOC-styled education level chart styling
+ * NOTE: Minimal changes for full-width design, preserving all original functionality
+ */
+
+/* Education chart container - minimal changes to remove box */
+.education-chart-wrapper {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: none;
+  padding: 20px;
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+/* Chart header - kept exactly as original */
+.chart-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.chart-title {
+  flex: 1;
+}
+
+.chart-title h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2124;
+  margin: 0;
+}
+
+/* Gender toggle buttons - unchanged */
+.gender-toggle-buttons {
+  display: inline-flex;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-right: 15px;
+}
+
+.gender-btn {
+  padding: 8px 15px;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  color: #495057;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.gender-btn:not(:last-child) {
+  border-right: none;
+}
+
+.gender-btn:first-child {
+  border-radius: 6px 0 0 6px;
+}
+
+.gender-btn:last-child {
+  border-radius: 0 6px 6px 0;
+}
+
+.gender-btn:hover {
+  background-color: #e9ecef;
+}
+
+.gender-btn.active {
+  background-color: #f9b410; /* CISOC yellow */
+  color: white;
+  border-color: #f9b410;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Expand button */
+.chart-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  color: #6c757d;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chart-toggle:hover {
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+/* Chart container */
+.chart-canvas-container {
+  height: 350px;
+  transition: height 0.3s ease;
+}
+
+/* Chart instructions */
+.chart-instructions {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #54595f;
+  font-style: italic;
+}
+
+/* Education Age Distribution */
+#education-age-distribution-section {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+#education-age-distribution-section h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #1f2124;
+}
+
+#selected-education-level {
+  color: #f9b410; /* CISOC yellow */
+  font-weight: 700;
+}
+
+/* Responsive adjustments - unchanged */
+@media screen and (max-width: 768px) {
+  .chart-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .chart-title {
+    margin-bottom: 15px;
+  }
+  
+  .gender-toggle-buttons {
+    margin-bottom: 15px;
+    margin-right: 0;
+    width: 100%;
+  }
+  
+  .gender-btn {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .chart-toggle {
+    align-self: flex-end;
+  }
+  
+  .chart-canvas-container {
+    height: 300px;
+  }
+}

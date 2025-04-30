@@ -1,0 +1,186 @@
+/*
+  File: disability-chart.css
+  Location: demographic-tool/frontend/css/disability-chart.css
+  Purpose: Styling for disability chart visualization and filters
+*/
+
+/* Disability filter container */
+.disability-filters {
+  background-color: white;
+  border-radius: 6px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.disability-filters .filter-section {
+  margin-bottom: 0;
+  flex: 1;
+  min-width: 200px;
+}
+
+/* Filter section titles */
+.disability-filters .filter-section-title {
+  font-family: "Red Hat Display", Sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--cisoc-text-dark);
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--cisoc-bg-light);
+}
+
+/* Gender toggle buttons - also using grid layout */
+.disability-gender-toggle {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+}
+
+/* Make the first button (Todos) span the entire row */
+.disability-gender-toggle .disability-gender-btn:first-child {
+  grid-column: 1 / -1;
+  background-color: var(--cisoc-yellow);
+  color: white;
+  font-weight: 600;
+}
+
+.disability-gender-btn {
+  flex: 1;
+  padding: 8px 12px;
+  font-family: "Red Hat Display", Sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid var(--cisoc-border);
+  border-radius: 4px;
+  background-color: white;
+  color: var(--cisoc-text-dark);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.disability-gender-btn:hover {
+  background-color: var(--cisoc-bg-light);
+  border-color: #ccc;
+}
+
+.disability-gender-btn.active {
+  background-color: var(--cisoc-yellow);
+  color: white;
+  border-color: var(--cisoc-yellow);
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.disability-gender-btn:first-child:not(.active) {
+  background-color: white;
+  color: var(--cisoc-text-dark);
+}
+
+/* Age group buttons - using CSS Grid for equal widths */
+.disability-age-buttons {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 buttons per row */
+  gap: 6px;
+}
+
+/* The first button (Todas as Idades) spans the entire row */
+.disability-age-buttons .disability-age-btn:first-child {
+  grid-column: 1 / -1;
+  background-color: var(--cisoc-yellow);
+  color: white;
+  font-weight: 600;
+}
+
+.disability-age-btn {
+  padding: 6px 10px;
+  background-color: white;
+  border: 1px solid var(--cisoc-border);
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Red Hat Display", Sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  color: var(--cisoc-text-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  white-space: nowrap;
+  height: 36px;
+  text-align: center;
+}
+
+.disability-age-btn:hover {
+  background-color: var(--cisoc-bg-light);
+  border-color: #ccc;
+}
+
+.disability-age-btn.active {
+  background-color: var(--cisoc-yellow);
+  color: white;
+  border-color: var(--cisoc-yellow);
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.disability-age-btn.all-btn:not(.active) {
+  background-color: white;
+  color: var(--cisoc-text-dark);
+}
+
+/* Chart instructions */
+.chart-instructions {
+  text-align: center;
+  margin-top: 15px;
+  font-family: "Red Hat Display", Sans-serif;
+  font-size: 14px;
+  color: var(--cisoc-text-medium);
+  font-style: italic;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 992px) {
+  /* Reduce to 4 columns on medium screens */
+  .disability-age-buttons {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .disability-filters {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .disability-gender-toggle {
+    width: 100%;
+  }
+  
+  /* Reduce to 3 columns on small screens */
+  .disability-age-buttons {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Make buttons more touch-friendly on mobile */
+  .disability-gender-btn,
+  .disability-age-btn {
+    min-height: 44px;
+  }
+  
+  /* Reduce to 2 columns on very small screens */
+  .disability-age-buttons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

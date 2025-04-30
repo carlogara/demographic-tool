@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CISOC - Ferramenta de Dados Demográficos</title>
+  <!-- Red Hat Display font (CISOC standard font) -->
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Main stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/landing.css" />
+  <link rel="stylesheet" href="css/navigation.css" />
+  <link rel="stylesheet" href="css/multi-select.css" />
+  <link rel="stylesheet" href="css/intuitive-filters.css" />
+  <link rel="stylesheet" href="css/education-chart.css" />
+  <link rel="stylesheet" href="css/disability-chart.css" />
+  <link rel="stylesheet" href="css/sidebar.css" />
+  <!-- Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- Add Chart.js library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+  <!-- Add Select2 CSS and JS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+  <!-- Add Font Awesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+  <!-- Landing Page -->
+  <div id="landing-page">
+    <div class="landing-container">
+      <div class="landing-header">
+        <div class="cisoc-logo-container">
+          <img src="https://cisoc.pna.gov.pt/wp-content/uploads/2023/11/logo-site-cisoc.png" alt="CISOC" class="cisoc-logo">
+        </div>
+        <h1>Ferramenta de Dados Demográficos</h1>
+        <p class="subtitle">Explore dados demográficos detalhados em Portugal</p>
+      </div>
+      
+      <div class="landing-search-container">
+        <div class="search-icon">
+          <i class="fas fa-search"></i>
+        </div>
+        <input 
+          type="text" 
+          id="landing-search" 
+          class="landing-search-input" 
+          placeholder="Pesquise por uma localização (ex: Lisboa, Sintra...)" 
+          autocomplete="off"
+        >
+        <div id="landing-search-results" class="landing-search-results"></div>
+      </div>
+      
+      <div class="landing-features">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-chart-bar"></i>
+          </div>
+          <h3>Acesso Simplificado a Dados Demográficos</h3>
+          <p>Acesso rápido e simplificado à informação demográfica sobre a população de uma freguesia, município ou região.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-database"></i>
+          </div>
+          <h3>Dados dos Censos 2021 do INE</h3>
+          <p>Explore dados sobre população residente por localização, sexo, grupo etário, país de naturalidade e nível de escolaridade dos Censos 2021 do INE.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-map-marked-alt"></i>
+          </div>
+          <h3>Pesquisa por Segmento</h3>
+          <p>Identifique onde estão concentrados segmentos demográficos específicos dentro de municípios ou regiões NUTS III.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Data Dashboard (CISOC styled) -->
+  <div id="data-dashboard" style="display: none;">
+    <!-- CISOC-style header with navigation -->
+    <div class="dashboard-header">
+      <div class="header-left">
+        <nav>
+          <ul class="cisoc-nav-menu cisoc-nav-menu-align-left">
+            <li class="cisoc-nav-menu-item">
+              <a href="#" id="back-to-landing" class="cisoc-nav-menu-link">PÁGINA INICIAL</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      
+      <div class="header-center">
+        <div class="header-search-container">
+          <div class="search-icon">
+            <i class="fas fa-search"></i>
+          </div>
+          <input 
+            type="text"
+            id="location-search" 
+            class="landing-search-input" 
+            placeholder="Pesquise por outra localização..." 
+            autocomplete="off"
+          >
+          <div id="search-results" class="search-results"></div>
+        </div>
+      </div>
+      
+      <div class="header-right">
+        <nav>
+          <ul class="cisoc-nav-menu cisoc-nav-menu-align-right">
+            <li class="cisoc-nav-menu-item">
+              <a href="#" id="toggle-view-button" class="cisoc-nav-menu-link">
+                <span id="segment-button-text">COMPARAR SEGMENTOS EM <span style="color: #f9b410; font-weight: 700;">LOCAL</span></span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Main Data View -->
+    <div id="location-overview" class="view-container">
+      <div class="container">
+        <div class="info-section">
+          <h1 class="location-header"><span id="current-location-name">Localização</span> <span class="view-label">Visão Geral</span></h1>
+          <h2>População Total: <span id="population">-</span></h2>
+          <p>
+            <strong>Homens:</strong> <span id="maleCount">-</span>
+            &nbsp;&nbsp;
+            <strong>Mulheres:</strong> <span id="femaleCount">-</span>
+          </p>
+        </div>
+
+        <div class="info-section">
+          <div class="nationality-chart-title">
+            <h2>Distribuição por País de Naturalidade</h2>
+          </div>
+          <div class="chart-container">
+            <canvas id="nationalityChart"></canvas>
+          </div>
+          
+          <!-- Age distribution section that appears when a nationality is clicked -->
+          <div class="age-distribution-container" id="age-distribution-section">
+            <h3>Distribuição Etária para <span id="selected-nationality">-</span></h3>
+            <div>
+              <button id="male-age-btn" class="gender-btn active">Homens</button>
+              <button id="female-age-btn" class="gender-btn">Mulheres</button>
+              <button id="total-age-btn" class="gender-btn">Total</button>
+            </div>
+            
+            <div class="age-chart-container">
+              <canvas id="ageDistributionChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section" id="nationality-table-section" style="display: none;">
+          <h2><em>Distribuição de Nacionalidades Estrangeiras</em> (Excluindo Portuguesa)</h2>
+          <table id="nationalityTable">
+            <thead>
+              <tr>
+                <th>Nacionalidade</th>
+                <th>Homens</th>
+                <th>Mulheres</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Table rows inserted here by JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="info-section" style="display: none;">
+          <h2>Categorias de Outros (por Continente)</h2>
+          <div id="others-info">
+            <!-- Others info inserted here -->
+          </div>
+        </div>
+
+        <div class="info-section" id="cross-calc" style="display: none;">
+          <!-- Cross calculation details inserted here -->
+        </div>
+        
+        <!-- UPDATED: Enhanced Education Level Chart Section -->
+        <div class="info-section" id="education-level-chart-section">
+          <h2>Distribuição por Nível de Escolaridade</h2>
+          <div class="chart-container">
+            <canvas id="educationLevelChart"></canvas>
+          </div>
+          <div class="chart-instructions">
+            Clique em qualquer nível de escolaridade para ver a distribuição por idade e sexo
+          </div>
+        </div>
+        
+        <!-- Education Age Distribution Section (initially hidden) -->
+        <div class="age-distribution-container" id="education-age-distribution-section" style="display: none;">
+          <h3>Distribuição Etária para <span id="selected-education-level">-</span></h3>
+          <div class="age-chart-container">
+            <canvas id="educationAgeDistributionChart"></canvas>
+          </div>
+        </div>
+        
+        <!-- Disability Chart Section -->
+        <div class="info-section" id="disability-chart-section">
+          <h2>Dificuldades em <span id="disability-location-name">-</span></h2>
+          <div class="disability-filters">
+            <div class="filter-section">
+              <div class="filter-section-title">Sexo</div>
+              <div class="disability-gender-toggle">
+                <button class="disability-gender-btn active" data-value="total">Todos</button>
+                <button class="disability-gender-btn" data-value="H">Homens</button>
+                <button class="disability-gender-btn" data-value="M">Mulheres</button>
+              </div>
+            </div>
+            <div class="filter-section">
+              <div class="filter-section-title">Grupo Etário</div>
+              <div class="disability-age-buttons" id="disability-age-group-buttons">
+                <button class="disability-age-btn all-btn active" data-value="all">Todas as Idades</button>
+                <!-- Age groups will be populated dynamically -->
+              </div>
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="disabilityChart"></canvas>
+          </div>
+        </div>
+        <!-- After the disability chart section in index.html, add this closing div: -->
+      </div>
+    </div>
+    
+    <!-- Segment Analysis View (with intuitive filters) -->
+    <div id="segment-analysis" class="view-container" style="display: none;">
+      <div class="container">
+        <div class="info-section" id="segment-focus-section">
+          <h2>Análise de Segmentos em <span id="parent-location-name">-</span></h2>
+          <p class="section-description">Explore como diferentes segmentos demográficos estão distribuídos nesta área.</p>
+          
+          <!-- Comparison Context Toggle (for freguesias) -->
+          <div id="comparison-context-toggle" class="comparison-context-toggle" style="display: none;">
+            <label>Comparar dentro de:</label>
+            <div id="comparison-context-buttons" class="comparison-context-buttons">
+              <!-- Buttons will be dynamically inserted here -->
+            </div>
+          </div>
+          
+          <!-- Region View Toggle (for regions) -->
+          <div id="region-view-toggle" class="region-view-toggle" style="display: none;">
+            <label for="region-view-mode">Visualizar por:</label>
+            <select id="region-view-mode" class="region-view-select">
+              <option value="municipality">Municípios</option>
+              <option value="freguesia">Freguesias</option>
+            </select>
+          </div>
+          
+          <!-- Dataset Toggle -->
+          <div class="dataset-toggle">
+            <button id="nationality-dataset-btn" class="dataset-btn active">Dados de Naturalidade</button>
+            <button id="education-dataset-btn" class="dataset-btn">Dados de Escolaridade</button>
+          </div>
+          
+          <!-- Old Filters (now hidden by default) -->
+          <div id="nationality-filters" class="segment-filters" style="display: none;">
+            <div class="filter-row">
+              <div class="filter-group">
+                <label for="nationality-select">Naturalidade:</label>
+                <select id="nationality-select" class="filter-select" multiple>
+                  <option value="all">Todas as Naturalidades</option>
+                  <!-- Dynamically populated -->
+                </select>
+              </div>
+              
+              <div class="filter-group">
+                <label for="age-group-select">Grupo Etário:</label>
+                <select id="age-group-select" class="filter-select" multiple>
+                  <option value="all">Todos os Grupos Etários</option>
+                  <!-- Dynamically populated -->
+                </select>
+              </div>
+              
+              <div class="filter-group">
+                <label for="gender-select">Sexo:</label>
+                <select id="gender-select" class="filter-select" multiple>
+                  <option value="all">Todos</option>
+                  <option value="H">Homens</option>
+                  <option value="M">Mulheres</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="filter-summary" id="nationality-filter-summary">
+              <!-- Filter summary will appear here -->
+            </div>
+            
+            <button id="apply-filters-btn" class="filter-btn">Aplicar Filtros</button>
+          </div>
+          
+          <!-- Old Education Filters (now hidden by default) -->
+          <div id="education-filters" class="segment-filters" style="display: none;">
+            <div class="filter-row">
+              <div class="filter-group">
+                <label for="education-level-select">Nível de Escolaridade:</label>
+                <select id="education-level-select" class="filter-select" multiple>
+                  <option value="all">Todos os Níveis</option>
+                  <option value="Nenhum">Nenhum</option>
+                  <option value="Ensino básico">Ensino Básico</option>
+                  <option value="Ensino secundário">Ensino Secundário</option>
+                  <option value="Ensino pós-secundário">Ensino Pós-Secundário</option>
+                  <option value="Ensino superior">Ensino Superior</option>
+                </select>
+              </div>
+              
+              <div class="filter-group">
+                <label for="edu-age-group-select">Grupo Etário:</label>
+                <select id="edu-age-group-select" class="filter-select" multiple>
+                  <option value="all">Todos os Grupos Etários</option>
+                  <!-- Dynamically populated with broader age groups -->
+                </select>
+              </div>
+              
+              <div class="filter-group">
+                <label for="edu-gender-select">Sexo:</label>
+                <select id="edu-gender-select" class="filter-select" multiple>
+                  <option value="all">Todos</option>
+                  <option value="H">Homens</option>
+                  <option value="M">Mulheres</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="filter-summary" id="education-filter-summary">
+              <!-- Filter summary will appear here -->
+            </div>
+            
+            <button id="apply-edu-filters-btn" class="filter-btn">Aplicar Filtros</button>
+          </div>
+          
+          <!-- NEW Intuitive Nationality Filters -->
+          <div id="nationality-intuitive-filters" class="intuitive-filters">
+            <!-- Nationality Section -->
+            <div class="filter-section">
+              <div class="filter-section-title">País de Naturalidade</div>
+              <button id="all-nationalities-btn" class="all-button active">
+                <i class="fas fa-globe"></i> Todos os Países
+              </button>
+              
+              <div class="nationality-search-container" style="display: none;">
+                <input type="text" id="nationality-search" class="nationality-search" placeholder="Pesquisar países...">
+                <div id="nationality-search-results" class="nationality-search-results"></div>
+              </div>
+              
+              <div id="nationality-tags" class="nationality-tags"></div>
+            </div>
+            
+            <!-- Age Group Section -->
+            <div class="filter-section">
+              <div class="filter-section-title">Grupo Etário</div>
+              <div id="age-group-buttons" class="age-group-buttons">
+                <button class="age-group-btn all-btn active" data-value="all">Todas as Idades</button>
+                <!-- Dynamically populated age buttons -->
+              </div>
+            </div>
+            
+            <!-- Gender Section -->
+            <div class="filter-section">
+              <div class="filter-section-title">Sexo</div>
+              <div class="gender-toggle">
+                <button class="gender-toggle-btn active" data-value="all">Todos</button>
+                <button class="gender-toggle-btn" data-value="H">Homens</button>
+                <button class="gender-toggle-btn" data-value="M">Mulheres</button>
+              </div>
+            </div>
+            
+            <!-- Filter Status -->
+            <div class="filter-status">
+              <div class="filter-status-title">Filtros Ativos:</div>
+              <div id="nationality-filter-status">Todos os Países</div>
+              <div id="age-filter-status">Todas as Idades</div>
+              <div id="gender-filter-status">Todos</div>
+            </div>
+            
+            <!-- Apply Button -->
+            <button id="apply-intuitive-filters" class="apply-filters">Aplicar Filtros</button>
+          </div>
+          
+          <!-- NEW Intuitive Education Filters -->
+          <div id="education-intuitive-filters" class="intuitive-filters" style="display: none;">
+            <!-- Education Level Section -->
+            <div class="filter-section">
+              <div class="filter-section-title">Nível de Escolaridade</div>
+              <div id="education-level-buttons" class="age-group-buttons">
+                <button class="age-group-btn all-btn active" data-value="all">Todos os Níveis</button>
+                <button class="age-group-btn" data-value="Nenhum">Nenhum</button>
+                <button class="age-group-btn" data-value="Ensino básico">Ensino Básico</button>
+                <button class="age-group-btn" data-value="Ensino secundário">Ensino Secundário</button>
+                <button class="age-group-btn" data-value="Ensino pós-secundário">Ensino Pós-Secundário</button>
+                <button class="age-group-btn" data-value="Ensino superior">Ensino Superior</button>
+              </div>
+            </div>
+            
+            <!-- Age Group Section -->
+            <div class="filter-section">
+              <div class="filter-section-title">Grupo Etário</div>
+              <div id="edu-age-group-buttons" class="age-group-buttons">
+                <button class="age-group-btn all-btn active" data-value="all">Todas as Idades</button>
+                <!-- Dynamically populated age buttons -->
+              </div>
+            </div>
+            
+            <!-- Gender Section -->
+            <div class="filter-section">
+              <div class="filter-section-title">Sexo</div>
+              <div class="gender-toggle">
+                <button class="gender-toggle-btn active" data-value="all">Todos</button>
+                <button class="gender-toggle-btn" data-value="H">Homens</button>
+                <button class="gender-toggle-btn" data-value="M">Mulheres</button>
+              </div>
+            </div>
+            
+            <!-- Filter Status -->
+            <div class="filter-status">
+              <div class="filter-status-title">Filtros Ativos:</div>
+              <div id="education-level-filter-status">Todos os Níveis</div>
+              <div id="edu-age-filter-status">Todas as Idades</div>
+              <div id="edu-gender-filter-status">Todos</div>
+            </div>
+            
+            <!-- Apply Button -->
+            <button id="apply-intuitive-edu-filters" class="apply-filters">Aplicar Filtros</button>
+          </div>
+          
+          <!-- Display Mode Toggle -->
+          <div class="display-toggle">
+            <span>Mostrar como:</span>
+            <label class="toggle-label">
+              <input type="radio" name="display-mode" value="percentage" checked>
+              Percentagem
+            </label>
+            <label class="toggle-label">
+              <input type="radio" name="display-mode" value="absolute">
+              Números Absolutos
+            </label>
+          </div>
+          
+          <!-- Results Container -->
+          <div class="results-container" style="display: none;">
+            <h3>Distribuição de <span id="segment-name">segmento selecionado</span></h3>
+            <div class="chart-container">
+              <canvas id="segmentDistributionChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<!-- CISOC Footer -->
+<footer class="cisoc-footer">
+  <div class="footer-top">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="https://cisoc.pna.gov.pt/wp-content/uploads/2023/11/logos-footer.png" alt="República Portuguesa e Plano Nacional das Artes" width="300">
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-container">
+      <div class="footer-links">
+        <a href="https://cisoc.pna.gov.pt/contactos/">CONTACTOS</a>
+        <a href="https://pna.us12.list-manage.com/subscribe?u=bfa38886ba62bcb0a0fe55692&id=9b6d0098ea">NEWSLETTER PNA</a>
+        <a href="https://cisoc.pna.gov.pt/politica-de-privacidade/">POLÍTICA DE PRIVACIDADE</a>
+        <a href="https://cisoc.pna.gov.pt/ficha-tecnica/">FICHA TÉCNICA</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <!-- Our JS modules -->
+  <script src="js/sidebar-dots.js"></script>
+  <script src="js/dataHandler.js"></script>
+  <script src="js/search/locationSearch.js"></script>
+  <script src="js/calculations/crossCalculations.js"></script>
+  <script src="js/charts/nationalityChart.js"></script>
+  <script src="js/charts/ageDistributionChart.js"></script>
+  <script src="js/charts/educationLevelChart.js"></script>
+  <script src="js/charts/disabilityChart.js"></script>
+  <script src="js/dataHandler-disability.js"></script>
+  <script src="js/tables/nationalityTable.js"></script>
+  <script src="js/landing.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/segment/segmentLocationHelpers.js"></script>
+  <script src="js/segment/segmentContext.js"></script>
+  <script src="js/segment/segmentFilters.js"></script>
+  <script src="js/segment/segmentChart.js"></script>
+  <!-- New modular intuitive filters -->
+  <script src="js/segment/filters/StateManager.js"></script>
+  <script src="js/segment/filters/NationalityFilters.js"></script>
+  <script src="js/segment/filters/AgeGroupFilters.js"></script>
+  <script src="js/segment/filters/GenderFilters.js"></script>
+  <script src="js/segment/filters/EducationFilters.js"></script>
+  <script src="js/segment/filters/IntuitiveFiltersCore.js"></script>
+  <script src="js/segment/segmentFocus.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,335 @@
+code,location,type,region
+111,Alto Minho,region,Alto Minho
+1601,Arcos de Valdevez,municipio,Alto Minho
+1602,Caminha,municipio,Alto Minho
+1603,Melgaço,municipio,Alto Minho
+1604,Monção,municipio,Alto Minho
+1605,Paredes de Coura,municipio,Alto Minho
+1606,Ponte da Barca,municipio,Alto Minho
+1607,Ponte de Lima,municipio,Alto Minho
+1608,Valença,municipio,Alto Minho
+1609,Viana do Castelo,municipio,Alto Minho
+1610,Vila Nova de Cerveira,municipio,Alto Minho
+112,Cávado,region,Cávado
+0301,Amares,municipio,Cávado
+0302,Barcelos,municipio,Cávado
+0303,Braga,municipio,Cávado
+0306,Esposende,municipio,Cávado
+0310,Terras de Bouro,municipio,Cávado
+0313,Vila Verde,municipio,Cávado
+119,Ave,region,Ave
+0304,Cabeceiras de Basto,municipio,Ave
+0307,Fafe,municipio,Ave
+0308,Guimarães,municipio,Ave
+1705,Mondim de Basto,municipio,Ave
+0309,Póvoa de Lanhoso,municipio,Ave
+0311,Vieira do Minho,municipio,Ave
+0312,Vila Nova de Famalicão,municipio,Ave
+0314,Vizela,municipio,Ave
+11A,Área Metropolitana do Porto,region,Área Metropolitana do Porto
+0104,Arouca,municipio,Área Metropolitana do Porto
+0107,Espinho,municipio,Área Metropolitana do Porto
+1304,Gondomar,municipio,Área Metropolitana do Porto
+1306,Maia,municipio,Área Metropolitana do Porto
+1308,Matosinhos,municipio,Área Metropolitana do Porto
+0113,Oliveira de Azeméis,municipio,Área Metropolitana do Porto
+1310,Paredes,municipio,Área Metropolitana do Porto
+1312,Porto,municipio,Área Metropolitana do Porto
+1313,Póvoa de Varzim,municipio,Área Metropolitana do Porto
+0109,Santa Maria da Feira,municipio,Área Metropolitana do Porto
+1314,Santo Tirso,municipio,Área Metropolitana do Porto
+0116,São João da Madeira,municipio,Área Metropolitana do Porto
+1318,Trofa,municipio,Área Metropolitana do Porto
+0119,Vale de Cambra,municipio,Área Metropolitana do Porto
+1315,Valongo,municipio,Área Metropolitana do Porto
+1316,Vila do Conde,municipio,Área Metropolitana do Porto
+1317,Vila Nova de Gaia,municipio,Área Metropolitana do Porto
+11B,Alto Tâmega e Barroso,region,Alto Tâmega e Barroso
+1702,Boticas,municipio,Alto Tâmega e Barroso
+1703,Chaves,municipio,Alto Tâmega e Barroso
+1706,Montalegre,municipio,Alto Tâmega e Barroso
+1709,Ribeira de Pena,municipio,Alto Tâmega e Barroso
+1712,Valpaços,municipio,Alto Tâmega e Barroso
+1713,Vila Pouca de Aguiar,municipio,Alto Tâmega e Barroso
+11C,Tâmega e Sousa,region,Tâmega e Sousa
+1301,Amarante,municipio,Tâmega e Sousa
+1302,Baião,municipio,Tâmega e Sousa
+0106,Castelo de Paiva,municipio,Tâmega e Sousa
+0305,Celorico de Basto,municipio,Tâmega e Sousa
+1804,Cinfães,municipio,Tâmega e Sousa
+1303,Felgueiras,municipio,Tâmega e Sousa
+1305,Lousada,municipio,Tâmega e Sousa
+1307,Marco de Canaveses,municipio,Tâmega e Sousa
+1309,Paços de Ferreira,municipio,Tâmega e Sousa
+1311,Penafiel,municipio,Tâmega e Sousa
+1813,Resende,municipio,Tâmega e Sousa
+11D,Douro,region,Douro
+1701,Alijó,municipio,Douro
+1801,Armamar,municipio,Douro
+0403,Carrazeda de Ansiães,municipio,Douro
+0404,Freixo de Espada à Cinta,municipio,Douro
+1805,Lamego,municipio,Douro
+1704,Mesão Frio,municipio,Douro
+1807,Moimenta da Beira,municipio,Douro
+1707,Murça,municipio,Douro
+1812,Penedono,municipio,Douro
+1708,Peso da Régua,municipio,Douro
+1710,Sabrosa,municipio,Douro
+1711,Santa Marta de Penaguião,municipio,Douro
+1815,São João da Pesqueira,municipio,Douro
+1818,Sernancelhe,municipio,Douro
+1819,Tabuaço,municipio,Douro
+1820,Tarouca,municipio,Douro
+0409,Torre de Moncorvo,municipio,Douro
+0914,Vila Nova de Foz Côa,municipio,Douro
+1714,Vila Real,municipio,Douro
+11E,Terras de Trás-os-Montes,region,Terras de Trás-os-Montes
+0401,Alfândega da Fé,municipio,Terras de Trás-os-Montes
+0402,Bragança,municipio,Terras de Trás-os-Montes
+0405,Macedo de Cavaleiros,municipio,Terras de Trás-os-Montes
+0406,Miranda do Douro,municipio,Terras de Trás-os-Montes
+0407,Mirandela,municipio,Terras de Trás-os-Montes
+0408,Mogadouro,municipio,Terras de Trás-os-Montes
+0410,Vila Flor,municipio,Terras de Trás-os-Montes
+0411,Vimioso,municipio,Terras de Trás-os-Montes
+0412,Vinhais,municipio,Terras de Trás-os-Montes
+191,Região de Aveiro,region,Região de Aveiro
+0101,Águeda,municipio,Região de Aveiro
+0102,Albergaria-a-Velha,municipio,Região de Aveiro
+0103,Anadia,municipio,Região de Aveiro
+0105,Aveiro,municipio,Região de Aveiro
+0108,Estarreja,municipio,Região de Aveiro
+0110,Ílhavo,municipio,Região de Aveiro
+0112,Murtosa,municipio,Região de Aveiro
+0114,Oliveira do Bairro,municipio,Região de Aveiro
+0115,Ovar,municipio,Região de Aveiro
+0117,Sever do Vouga,municipio,Região de Aveiro
+0118,Vagos,municipio,Região de Aveiro
+192,Região de Coimbra,region,Região de Coimbra
+0601,Arganil,municipio,Região de Coimbra
+0602,Cantanhede,municipio,Região de Coimbra
+0603,Coimbra,municipio,Região de Coimbra
+0604,Condeixa-a-Nova,municipio,Região de Coimbra
+0605,Figueira da Foz,municipio,Região de Coimbra
+0606,Góis,municipio,Região de Coimbra
+0607,Lousã,municipio,Região de Coimbra
+0111,Mealhada,municipio,Região de Coimbra
+0608,Mira,municipio,Região de Coimbra
+0609,Miranda do Corvo,municipio,Região de Coimbra
+0610,Montemor-o-Velho,municipio,Região de Coimbra
+1808,Mortágua,municipio,Região de Coimbra
+0611,Oliveira do Hospital,municipio,Região de Coimbra
+0612,Pampilhosa da Serra,municipio,Região de Coimbra
+0613,Penacova,municipio,Região de Coimbra
+0614,Penela,municipio,Região de Coimbra
+0615,Soure,municipio,Região de Coimbra
+0616,Tábua,municipio,Região de Coimbra
+0617,Vila Nova de Poiares,municipio,Região de Coimbra
+193,Região de Leiria,region,Região de Leiria
+1002,Alvaiázere,municipio,Região de Leiria
+1003,Ansião,municipio,Região de Leiria
+1004,Batalha,municipio,Região de Leiria
+1007,Castanheira de Pêra,municipio,Região de Leiria
+1008,Figueiró dos Vinhos,municipio,Região de Leiria
+1009,Leiria,municipio,Região de Leiria
+1010,Marinha Grande,municipio,Região de Leiria
+1013,Pedrógão Grande,municipio,Região de Leiria
+1015,Pombal,municipio,Região de Leiria
+1016,Porto de Mós,municipio,Região de Leiria
+194,Viseu Dão Lafões,region,Viseu Dão Lafões
+0901,Aguiar da Beira,municipio,Viseu Dão Lafões
+1802,Carregal do Sal,municipio,Viseu Dão Lafões
+1803,Castro Daire,municipio,Viseu Dão Lafões
+1806,Mangualde,municipio,Viseu Dão Lafões
+1809,Nelas,municipio,Viseu Dão Lafões
+1810,Oliveira de Frades,municipio,Viseu Dão Lafões
+1811,Penalva do Castelo,municipio,Viseu Dão Lafões
+1814,Santa Comba Dão,municipio,Viseu Dão Lafões
+1816,São Pedro do Sul,municipio,Viseu Dão Lafões
+1817,Sátão,municipio,Viseu Dão Lafões
+1821,Tondela,municipio,Viseu Dão Lafões
+1822,Vila Nova de Paiva,municipio,Viseu Dão Lafões
+1823,Viseu,municipio,Viseu Dão Lafões
+1824,Vouzela,municipio,Viseu Dão Lafões
+195,Beira Baixa,region,Beira Baixa
+0502,Castelo Branco,municipio,Beira Baixa
+0505,Idanha-a-Nova,municipio,Beira Baixa
+0506,Oleiros,municipio,Beira Baixa
+0507,Penamacor,municipio,Beira Baixa
+0508,Proença-a-Nova,municipio,Beira Baixa
+0509,Sertã,municipio,Beira Baixa
+0510,Vila de Rei,municipio,Beira Baixa
+0511,Vila Velha de Ródão,municipio,Beira Baixa
+196,Beiras e Serra da Estrela,region,Beiras e Serra da Estrela
+0902,Almeida,municipio,Beiras e Serra da Estrela
+0501,Belmonte,municipio,Beiras e Serra da Estrela
+0903,Celorico da Beira,municipio,Beiras e Serra da Estrela
+0503,Covilhã,municipio,Beiras e Serra da Estrela
+0904,Figueira de Castelo Rodrigo,municipio,Beiras e Serra da Estrela
+0905,Fornos de Algodres,municipio,Beiras e Serra da Estrela
+0504,Fundão,municipio,Beiras e Serra da Estrela
+0906,Gouveia,municipio,Beiras e Serra da Estrela
+0907,Guarda,municipio,Beiras e Serra da Estrela
+0908,Manteigas,municipio,Beiras e Serra da Estrela
+0909,Mêda,municipio,Beiras e Serra da Estrela
+0910,Pinhel,municipio,Beiras e Serra da Estrela
+0911,Sabugal,municipio,Beiras e Serra da Estrela
+0912,Seia,municipio,Beiras e Serra da Estrela
+0913,Trancoso,municipio,Beiras e Serra da Estrela
+1D1,Oeste,region,Oeste
+1001,Alcobaça,municipio,Oeste
+1101,Alenquer,municipio,Oeste
+1102,Arruda dos Vinhos,municipio,Oeste
+1005,Bombarral,municipio,Oeste
+1104,Cadaval,municipio,Oeste
+1006,Caldas da Rainha,municipio,Oeste
+1108,Lourinhã,municipio,Oeste
+1011,Nazaré,municipio,Oeste
+1012,Óbidos,municipio,Oeste
+1014,Peniche,municipio,Oeste
+1112,Sobral de Monte Agraço,municipio,Oeste
+1113,Torres Vedras,municipio,Oeste
+1D2,Médio Tejo,region,Médio Tejo
+1401,Abrantes,municipio,Médio Tejo
+1402,Alcanena,municipio,Médio Tejo
+1408,Constância,municipio,Médio Tejo
+1410,Entroncamento,municipio,Médio Tejo
+1411,Ferreira do Zêzere,municipio,Médio Tejo
+1413,Mação,municipio,Médio Tejo
+1421,Ourém,municipio,Médio Tejo
+1417,Sardoal,municipio,Médio Tejo
+1418,Tomar,municipio,Médio Tejo
+1419,Torres Novas,municipio,Médio Tejo
+1420,Vila Nova da Barquinha,municipio,Médio Tejo
+1D3,Lezíria do Tejo,region,Lezíria do Tejo
+1403,Almeirim,municipio,Lezíria do Tejo
+1404,Alpiarça,municipio,Lezíria do Tejo
+1103,Azambuja,municipio,Lezíria do Tejo
+1405,Benavente,municipio,Lezíria do Tejo
+1406,Cartaxo,municipio,Lezíria do Tejo
+1407,Chamusca,municipio,Lezíria do Tejo
+1409,Coruche,municipio,Lezíria do Tejo
+1412,Golegã,municipio,Lezíria do Tejo
+1414,Rio Maior,municipio,Lezíria do Tejo
+1415,Salvaterra de Magos,municipio,Lezíria do Tejo
+1416,Santarém,municipio,Lezíria do Tejo
+1A0,Grande Lisboa,region,Grande Lisboa
+1115,Amadora,municipio,Grande Lisboa
+1105,Cascais,municipio,Grande Lisboa
+1106,Lisboa,municipio,Grande Lisboa
+1107,Loures,municipio,Grande Lisboa
+1109,Mafra,municipio,Grande Lisboa
+1116,Odivelas,municipio,Grande Lisboa
+1110,Oeiras,municipio,Grande Lisboa
+1111,Sintra,municipio,Grande Lisboa
+1114,Vila Franca de Xira,municipio,Grande Lisboa
+1B0,Península de Setúbal,region,Península de Setúbal
+1502,Alcochete,municipio,Península de Setúbal
+1503,Almada,municipio,Península de Setúbal
+1504,Barreiro,municipio,Península de Setúbal
+1506,Moita,municipio,Península de Setúbal
+1507,Montijo,municipio,Península de Setúbal
+1508,Palmela,municipio,Península de Setúbal
+1510,Seixal,municipio,Península de Setúbal
+1511,Sesimbra,municipio,Península de Setúbal
+1512,Setúbal,municipio,Península de Setúbal
+1C1,Alentejo Litoral,region,Alentejo Litoral
+1501,Alcácer do Sal,municipio,Alentejo Litoral
+1505,Grândola,municipio,Alentejo Litoral
+0211,Odemira,municipio,Alentejo Litoral
+1509,Santiago do Cacém,municipio,Alentejo Litoral
+1513,Sines,municipio,Alentejo Litoral
+1C2,Baixo Alentejo,region,Baixo Alentejo
+0201,Aljustrel,municipio,Baixo Alentejo
+0202,Almodôvar,municipio,Baixo Alentejo
+0203,Alvito,municipio,Baixo Alentejo
+0204,Barrancos,municipio,Baixo Alentejo
+0205,Beja,municipio,Baixo Alentejo
+0206,Castro Verde,municipio,Baixo Alentejo
+0207,Cuba,municipio,Baixo Alentejo
+0208,Ferreira do Alentejo,municipio,Baixo Alentejo
+0209,Mértola,municipio,Baixo Alentejo
+0210,Moura,municipio,Baixo Alentejo
+0212,Ourique,municipio,Baixo Alentejo
+0213,Serpa,municipio,Baixo Alentejo
+0214,Vidigueira,municipio,Baixo Alentejo
+1C3,Alto Alentejo,region,Alto Alentejo
+1201,Alter do Chão,municipio,Alto Alentejo
+1202,Arronches,municipio,Alto Alentejo
+1203,Avis,municipio,Alto Alentejo
+1204,Campo Maior,municipio,Alto Alentejo
+1205,Castelo de Vide,municipio,Alto Alentejo
+1206,Crato,municipio,Alto Alentejo
+1207,Elvas,municipio,Alto Alentejo
+1208,Fronteira,municipio,Alto Alentejo
+1209,Gavião,municipio,Alto Alentejo
+1210,Marvão,municipio,Alto Alentejo
+1211,Monforte,municipio,Alto Alentejo
+1212,Nisa,municipio,Alto Alentejo
+1213,Ponte de Sor,municipio,Alto Alentejo
+1214,Portalegre,municipio,Alto Alentejo
+1215,Sousel,municipio,Alto Alentejo
+1C4,Alentejo Central,region,Alentejo Central
+0701,Alandroal,municipio,Alentejo Central
+0702,Arraiolos,municipio,Alentejo Central
+0703,Borba,municipio,Alentejo Central
+0704,Estremoz,municipio,Alentejo Central
+0705,Évora,municipio,Alentejo Central
+0706,Montemor-o-Novo,municipio,Alentejo Central
+0707,Mora,municipio,Alentejo Central
+0708,Mourão,municipio,Alentejo Central
+0709,Portel,municipio,Alentejo Central
+0710,Redondo,municipio,Alentejo Central
+0711,Reguengos de Monsaraz,municipio,Alentejo Central
+0712,Vendas Novas,municipio,Alentejo Central
+0713,Viana do Alentejo,municipio,Alentejo Central
+0714,Vila Viçosa,municipio,Alentejo Central
+150,Algarve,region,Algarve
+0801,Albufeira,municipio,Algarve
+0802,Alcoutim,municipio,Algarve
+0803,Aljezur,municipio,Algarve
+0804,Castro Marim,municipio,Algarve
+0805,Faro,municipio,Algarve
+0806,Lagoa,municipio,Algarve
+0807,Lagos,municipio,Algarve
+0808,Loulé,municipio,Algarve
+0809,Monchique,municipio,Algarve
+0810,Olhão,municipio,Algarve
+0811,Portimão,municipio,Algarve
+0812,São Brás de Alportel,municipio,Algarve
+0813,Silves,municipio,Algarve
+0814,Tavira,municipio,Algarve
+0815,Vila do Bispo,municipio,Algarve
+0816,Vila Real de Santo António,municipio,Algarve
+200,Região Autónoma dos Açores,region,Região Autónoma dos Açores
+4301,Angra do Heroísmo,municipio,Região Autónoma dos Açores
+4501,Calheta (R.A.A.),municipio,Região Autónoma dos Açores
+4901,Corvo,municipio,Região Autónoma dos Açores
+4701,Horta,municipio,Região Autónoma dos Açores
+4201,Lagoa (R.A.A.),municipio,Região Autónoma dos Açores
+4801,Lajes das Flores,municipio,Região Autónoma dos Açores
+4601,Lajes do Pico,municipio,Região Autónoma dos Açores
+4602,Madalena,municipio,Região Autónoma dos Açores
+4202,Nordeste,municipio,Região Autónoma dos Açores
+4203,Ponta Delgada,municipio,Região Autónoma dos Açores
+4204,Povoação,municipio,Região Autónoma dos Açores
+4205,Ribeira Grande,municipio,Região Autónoma dos Açores
+4401,Santa Cruz da Graciosa,municipio,Região Autónoma dos Açores
+4802,Santa Cruz das Flores,municipio,Região Autónoma dos Açores
+4603,São Roque do Pico,municipio,Região Autónoma dos Açores
+4502,Velas,municipio,Região Autónoma dos Açores
+4302,Vila da Praia da Vitória,municipio,Região Autónoma dos Açores
+4101,Vila do Porto,municipio,Região Autónoma dos Açores
+4206,Vila Franca do Campo,municipio,Região Autónoma dos Açores
+300,Região Autónoma da Madeira,region,Região Autónoma da Madeira
+3101,Calheta (R.A.M.),municipio,Região Autónoma da Madeira
+3102,Câmara de Lobos,municipio,Região Autónoma da Madeira
+3103,Funchal,municipio,Região Autónoma da Madeira
+3104,Machico,municipio,Região Autónoma da Madeira
+3105,Ponta do Sol,municipio,Região Autónoma da Madeira
+3106,Porto Moniz,municipio,Região Autónoma da Madeira
+3201,Porto Santo,municipio,Região Autónoma da Madeira
+3107,Ribeira Brava,municipio,Região Autónoma da Madeira
+3108,Santa Cruz,municipio,Região Autónoma da Madeira
+3109,Santana,municipio,Região Autónoma da Madeira
+3110,São Vicente,municipio,Região Autónoma da Madeira

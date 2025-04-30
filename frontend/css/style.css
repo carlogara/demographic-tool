@@ -1,0 +1,602 @@
+/*
+  File: style.css
+  Location: demographic-tool/frontend/css/style.css
+  Purpose:
+    - Full-width, sleek CISOC design
+    - Preserves all original functionality
+*/
+
+/* CISOC Variables */
+:root {
+  /* Primary brand colors */
+  --cisoc-yellow: #f9b410;
+  --cisoc-text-dark: #1f2124;
+  --cisoc-text-medium: #54595f;
+  --cisoc-bg-light: #f1f2f3;
+  --cisoc-border: #d5d8dc;
+  
+  /* Portuguese flag colors */
+  --cisoc-portuguese-green: #006633;
+  --cisoc-portuguese-yellow: #ffcc00;
+  --cisoc-portuguese-red: #cc0000;
+}
+
+/* Basic page layout */
+body {
+  font-family: "Red Hat Display", Sans-serif;
+  color: var(--cisoc-text-dark);
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+/* Main container - full-width with proper spacing */
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 20px 40px;
+  background: white;
+  box-sizing: border-box;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+}
+
+/* Nationality table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table, th, td {
+  border: 1px solid var(--cisoc-border);
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: var(--cisoc-bg-light);
+  font-weight: 600;
+}
+
+/* Section containers - no boxes */
+.info-section {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.info-section:last-child {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  border-bottom: none !important;
+}
+
+/* Search functionality */
+.search-container {
+  position: relative;
+  width: 300px;
+  margin: 20px 0;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid var(--cisoc-border);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.search-results {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid var(--cisoc-border);
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+}
+
+.search-result-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.search-result-item:hover {
+  background-color: var(--cisoc-bg-light);
+}
+
+/* Chart containers - no borders/backgrounds */
+.chart-container {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  margin-top: 20px;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* Education chart sections */
+.education-chart-wrapper {
+  box-shadow: none;
+  border-radius: 0;
+  border: none;
+  background-color: transparent;
+}
+
+#education-level-chart-section {
+  border-bottom: none;
+}
+
+#education-age-distribution-section {
+  box-shadow: none;
+  border-radius: 0;
+  border: none;
+  background-color: transparent;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Age distribution container */
+.age-distribution-container {
+  display: none;
+  margin-top: 20px;
+  padding: 20px;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+.age-chart-container {
+  position: relative;
+  height: 300px;
+  width: 100%;
+  margin-top: 15px;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* Chart toggle button */
+.nationality-chart-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chart-toggle {
+  cursor: pointer;
+  padding: 8px 12px;
+  background-color: var(--cisoc-bg-light);
+  border: 1px solid var(--cisoc-border);
+  border-radius: 4px;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.chart-toggle:hover {
+  background-color: #e0e0e0;
+}
+
+/* Gender selection buttons */
+.gender-btn {
+  padding: 8px 15px;
+  margin-right: 10px;
+  background-color: var(--cisoc-bg-light);
+  border: 1px solid var(--cisoc-border);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.gender-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.gender-btn.active {
+  background-color: var(--cisoc-yellow);
+  color: white;
+  border-color: var(--cisoc-yellow);
+}
+
+/* Tooltip styling for charts */
+.chart-tooltip {
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Highlight for selected chart elements */
+.selected-bar {
+  opacity: 1 !important;
+  border-width: 2px !important;
+}
+
+/* Dashboard layout elements */
+.view-container {
+  background-color: white;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+#data-dashboard {
+  background-color: white;
+}
+
+/* Segment Focus Section */
+#segment-focus-section {
+  margin-top: 30px;
+  padding: 20px;
+}
+
+.section-description {
+  color: var(--cisoc-text-medium);
+  margin-bottom: 20px;
+}
+
+/* Dataset Toggle */
+.dataset-toggle {
+  display: flex;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.dataset-btn {
+  padding: 10px 16px;
+  background-color: var(--cisoc-bg-light);
+  border: 1px solid var(--cisoc-border);
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: all 0.2s;
+  font-weight: 500;
+  flex: 1;
+  min-width: 150px;
+  white-space: normal;
+  text-align: center;
+}
+
+.dataset-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.dataset-btn.active {
+  background-color: var(--cisoc-yellow);
+  color: white;
+  border-color: var(--cisoc-yellow);
+}
+
+/* Filters */
+.segment-filters {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 6px;
+  border: 1px solid var(--cisoc-border);
+}
+
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.filter-group {
+  flex: 1;
+  min-width: 150px;
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--cisoc-text-dark);
+}
+
+.filter-select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--cisoc-border);
+  border-radius: 4px;
+  background-color: white;
+}
+
+.filter-btn {
+  padding: 10px 16px;
+  background-color: var(--cisoc-yellow);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.filter-btn:hover {
+  background-color: #E69E00;
+}
+
+/* Display Toggle */
+.display-toggle {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: var(--cisoc-bg-light);
+  border-radius: 4px;
+  border: 1px solid var(--cisoc-border);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.toggle-label {
+  margin-left: 15px;
+  cursor: pointer;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.toggle-label input {
+  margin-right: 5px;
+}
+
+/* Results Container */
+.results-container {
+  margin-top: 20px;
+}
+
+.results-container h3 {
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: var(--cisoc-text-dark);
+}
+
+/* Location badges in search results */
+.location-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  margin-left: 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+}
+
+.region-badge {
+  background-color: #00668E;
+}
+
+.municipio-badge {
+  background-color: #6aa84f;
+}
+
+.freguesia-badge {
+  background-color: #F58231;
+}
+
+/* CISOC Footer */
+.cisoc-footer {
+  margin-top: 0;
+  border-top: none;
+}
+
+.footer-top {
+  background-color: white;
+  padding: 20px 0;
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.05);
+}
+
+.footer-bottom {
+  background-color: #f9b410;
+  padding: 15px 0;
+}
+
+.footer-container {
+  width: 90%;
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.footer-links a {
+  color: #000000;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 15px 20px;
+  }
+  
+  .footer-logo img {
+    max-width: 90%;
+    height: auto;
+  }
+  
+  .footer-links {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .search-container {
+    width: 100%;
+  }
+
+  .chart-container {
+    height: 300px;
+  }
+
+  .age-chart-container {
+    height: 250px;
+  }
+  
+  .filter-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .filter-group {
+    width: 100%;
+  }
+  
+  .dataset-toggle {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .dataset-btn {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 8px;
+  }
+  
+  /* Make buttons more touch-friendly on mobile */
+  .dataset-btn,
+  .filter-btn,
+  .toggle-label {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Make the location name in the header stand out with CISOC yellow */
+#current-location-name {
+  color: var(--cisoc-yellow);
+  font-weight: 700;
+}
+
+/* Also apply the same styling to the disability location name for consistency */
+#disability-location-name {
+  color: var(--cisoc-yellow);
+  font-weight: 700;
+}
+
+/* Optional: Also highlight the selected nationality with the same color for consistency */
+#selected-nationality {
+  color: var(--cisoc-yellow);
+  font-weight: 700;
+}
+
+/* Optional: Also highlight the selected education level with the same color for consistency */
+#selected-education-level {
+  color: var(--cisoc-yellow);
+  font-weight: 700;
+}
+
+/**
+ * Portugal toggle button styling
+ */
+
+/* Portugal toggle button */
+.portugal-toggle {
+  margin-left: auto;
+}
+
+.portugal-toggle-btn {
+  padding: 8px 15px;
+  background-color: var(--cisoc-bg-light);
+  border: 1px solid var(--cisoc-border);
+  border-radius: 4px;
+  color: var(--cisoc-text-dark);
+  font-family: "Red Hat Display", Sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.portugal-toggle-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.portugal-toggle-btn.active {
+  background-color: var(--cisoc-yellow);
+  color: white;
+  border-color: var(--cisoc-yellow);
+}
+
+/* Nationality chart title with flex layout */
+.nationality-chart-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .nationality-chart-title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .portugal-toggle {
+    margin-left: 0;
+    width: 100%;
+  }
+  
+  .portugal-toggle-btn {
+    width: 100%;
+  }
+}
