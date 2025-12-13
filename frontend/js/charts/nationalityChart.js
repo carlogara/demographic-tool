@@ -25,14 +25,14 @@ function initNationalityChart() {
       labels: [],
       datasets: [
         {
-          label: 'Male',
+          label: 'Masculino',
           backgroundColor: 'rgba(54, 162, 235, 0.7)',
           borderColor: 'rgba(54, 162, 235, 1)',
           borderWidth: [],
           data: []
         },
         {
-          label: 'Female',
+          label: 'Feminino',
           backgroundColor: 'rgba(255, 99, 132, 0.7)',
           borderColor: 'rgba(255, 99, 132, 1)',
           borderWidth: [],
@@ -88,8 +88,14 @@ function addPortugalToggle() {
     </div>
   `;
   
-  // Add button to the right of the title
-  chartTitle.innerHTML = `<h2>Distribuição por País de Naturalidade</h2>${toggleHTML}`;
+  // Add button and subtitle to the right of the title
+  chartTitle.innerHTML = `
+    <div>
+      <h2>Distribuição por País de Naturalidade</h2>
+      <p class="chart-subtitle">Clique numa barra para ver a distribuição por faixa etária</p>
+    </div>
+    ${toggleHTML}
+  `;
   
   // Add event listener after the DOM is updated
   setTimeout(() => {
@@ -206,7 +212,7 @@ function handleNationalityChartClick(event, elements) {
     nationalityChart.data.datasets.forEach(dataset => {
       // Because backgroundColor can be an array or single value,
       // we ensure we reset each bar to the "default" color
-      if (dataset.label === 'Male') {
+      if (dataset.label === 'Masculino') {
         dataset.backgroundColor = dataset.backgroundColor.map(() => 'rgba(54, 162, 235, 0.7)');
       } else {
         dataset.backgroundColor = dataset.backgroundColor.map(() => 'rgba(255, 99, 132, 0.7)');
@@ -216,7 +222,7 @@ function handleNationalityChartClick(event, elements) {
 
     // Highlight the selected bars
     nationalityChart.data.datasets.forEach(dataset => {
-      if (dataset.label === 'Male') {
+      if (dataset.label === 'Masculino') {
         dataset.backgroundColor[index] = 'rgba(54, 162, 235, 1)';
         dataset.borderWidth[index] = 2;
       } else {
