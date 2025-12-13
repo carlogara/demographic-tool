@@ -66,7 +66,7 @@
           <h3>Nível Mais Alto de Escolaridade Concluído por Grupo Etário</h3>
         </div>
         <div class="gender-toggle-buttons">
-          <button id="gender-total-btn" class="gender-btn active">All</button>
+          <button id="gender-total-btn" class="gender-btn active">Total</button>
           <button id="gender-male-btn" class="gender-btn">Homens</button>
           <button id="gender-female-btn" class="gender-btn">Mulheres</button>
         </div>
@@ -100,7 +100,7 @@
         datasets: [
           // Original stacking order (No Education at bottom)
           {
-            label: 'No Education',
+            label: 'Nenhum',
             data: data.none,
             backgroundColor: COLORS.none.fill,
             borderColor: COLORS.none.stroke,
@@ -111,7 +111,7 @@
             tooltipSortOrder: 5
           },
           {
-            label: 'Basic Education',
+            label: 'Ensino Básico',
             data: data.basic,
             backgroundColor: COLORS.basic.fill,
             borderColor: COLORS.basic.stroke,
@@ -121,7 +121,7 @@
             tooltipSortOrder: 4
           },
           {
-            label: 'Secondary Education',
+            label: 'Ensino Secundário',
             data: data.secondary,
             backgroundColor: COLORS.secondary.fill,
             borderColor: COLORS.secondary.stroke,
@@ -131,7 +131,7 @@
             tooltipSortOrder: 3
           },
           {
-            label: 'Post-Secondary',
+            label: 'Pós-Secundário',
             data: data.postSecondary,
             backgroundColor: COLORS.postSecondary.fill,
             borderColor: COLORS.postSecondary.stroke,
@@ -141,7 +141,7 @@
             tooltipSortOrder: 2
           },
           {
-            label: 'Higher Education',
+            label: 'Ensino Superior',
             data: data.higher,
             backgroundColor: COLORS.higher.fill,
             borderColor: COLORS.higher.stroke,
